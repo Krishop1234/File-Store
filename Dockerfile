@@ -1,4 +1,4 @@
-FROM anshumanpm2006/file-store:stable
+FROM rushidhar/file-store:stable
 
 WORKDIR /app
 
