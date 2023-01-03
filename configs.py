@@ -6,8 +6,8 @@ import os
 class Config(object):
 	API_ID = int(os.environ.get("API_ID", "19491592"))
 	API_HASH = os.environ.get("API_HASH", "01a4118f7aec3b2caece77a057fdd197")
-	BOT_TOKEN = os.environ.get("BOT_TOKEN", "5498372818:AAG0boBm6FBLX9W8eSMJBIXVn03y9hfJUwA")
-	BOT_USERNAME = os.environ.get("BOT_USERNAME", "File_store_Rushidhar_Bot")
+	BOT_TOKEN = os.environ.get("BOT_TOKEN", "5953148783:AAFSatZ0gdX42-hT-s4yetySjPl1zuksqe0")
+	BOT_USERNAME = os.environ.get("BOT_USERNAME", "File_store_Rushidhar_1Bot")
 	DB_CHANNEL = int(os.environ.get("DB_CHANNEL", "-1001614658044"))
 	BOT_OWNER = int(os.environ.get("BOT_OWNER", "5175000602"))
 	DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://Rushidharr:rushidharr@cluster0.otsjcpp.mongodb.net/?retryWrites=true&w=majority")
