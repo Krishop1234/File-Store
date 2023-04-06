@@ -30,7 +30,7 @@ Send Me any Media or File.I can Work In Channel too Add Me to Channel with Edit 
 │
 ├🔹📚 **Library: [Pʏʀᴏɢʀᴀᴍ](https://docs.pyrogram.org) **
 │
-├🔹📡 **Hosted On: [Mᴏɢᴇɴɪᴜs](https://mogenius.com/) **
+├🔹📡 **Hosted On: [Hᴇʀᴏkᴜ](https://heroku.com) **
 │
 ├🔸👨‍💻 **Developer: [Rᴜsʜɪᴅʜᴀʀ](https://telegram.me/rushidhar1999) **
 │
