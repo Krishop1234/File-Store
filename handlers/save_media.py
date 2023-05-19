@@ -60,7 +60,7 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
         )
         await bot.send_message(
             chat_id=int(Config.LOG_CHANNEL),
-            text=f"#BATCH_SAVE:\n\n[{editable.reply_to_message.from_user.first_name}](tg://user?id={editable.reply_to_message.from_user.id}) Got Batch Link!",
+            text=f"#BATCH_SAVE:\n\nUser Full Name : {editable.reply_to_message.from_user.first_name} {editable.reply_to_message.from_user.last_name}\nUser Name : {editable.reply_to_message.from_user.mention}\nUser ID : {editable.reply_to_message.from_user.id} Got Batch Link!",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Open Link", url=share_link)]])
         )
@@ -83,7 +83,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
         forwarded_msg = await message.forward(Config.DB_CHANNEL)
         file_er_id = str(forwarded_msg.id)
         await forwarded_msg.reply_text(
-            f"#PRIVATE_FILE:\n\n[{message.from_user.first_name}](tg://user?id={message.from_user.id}) Got File Link!",
+            f"#PRIVATE_FILE:\n\nUser Full Name : {message.from_user.first_name} {message.from_user.last_name}\nUser Name : {message.from_user.mention}\nUser ID : {message.from_user.id} Got File Link!",
             disable_web_page_preview=True)
         share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=Rushidhar_{str_to_b64(file_er_id)}"
         await editable.edit(
