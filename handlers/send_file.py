@@ -8,7 +8,7 @@ from pyrogram.errors import FloodWait
 from handlers.helpers import str_to_b64
 import threading
 
-async def auto_delete_thread(msg):
+async def auto_delete_thread(bot: Client, msg: Message):
     asyncio.sleep(300)
     return await bot.delete_messages(msg.chat.id, msg.id)
 
