@@ -8,7 +8,7 @@ import threading
 
 
 async def auto_delete_thread(bot, msg):
-    asyncio.sleep(300)
+    await asyncio.sleep(300)
     return await bot.delete_messages(msg.chat.id, msg.id)
 
 
