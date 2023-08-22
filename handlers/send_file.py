@@ -4,6 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
 from handlers.helpers import str_to_b64
+import threading
 
 
 async def auto_delete_thread(bot, msg):
