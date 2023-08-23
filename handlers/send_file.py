@@ -6,6 +6,14 @@ from pyrogram.errors import FloodWait
 from handlers.helpers import str_to_b64
 import threading
 
+async def reply_forward(message: Message, file_id: int):
+    try:
+        await message.reply_text(
+            f"**Files will be Deleted After 30 min ⏰**\n",
+            disable_web_page_preview=True, quote=True)
+    except FloodWait as e:
+        await asyncio.sleep(e.value)
+        await reply_forward(message, file_id)
 
 async def media_forward(bot: Client, user_id: int, file_id: int):
     try:
@@ -29,7 +37,7 @@ async def auto_delete_thread(bot, msg):
 
 async def send_media_and_reply(bot: Client, user_id: int, file_id: int):
     sent_message = await media_forward(bot, user_id, file_id)
-    # await reply_forward(message=sent_message, file_id=file_id)
+    await reply_forward(message=sent_message, file_id=file_id)
     await asyncio.sleep(2)
     delete = threading.Thread(
         target=lambda: asyncio.run(auto_delete_thread(bot, sent_message))
