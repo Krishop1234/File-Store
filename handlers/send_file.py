@@ -9,7 +9,7 @@ import threading
 async def reply_forward(message: Message, file_id: int):
     try:
         await message.reply_text(
-            f"**Files will be Deleted After 30 min ⏰**\n",
+            f"**Files will be Deleted After 5 min ⏰**\n",
             disable_web_page_preview=True, quote=True)
     except FloodWait as e:
         await asyncio.sleep(e.value)
