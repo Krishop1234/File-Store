@@ -31,13 +31,13 @@ async def media_forward(bot: Client, user_id: int, file_id: int):
 
 
 async def auto_delete_thread(bot, msg):
-    await asyncio.sleep(300)
+    await asyncio.sleep(120)
     return await bot.delete_messages(msg.chat.id, msg.id)
 
 
 async def send_media_and_reply(bot: Client, user_id: int, file_id: int):
     sent_message = await media_forward(bot, user_id, file_id)
-    await reply_forward(message=sent_message, file_id=file_id)
+    # await reply_forward(message=sent_message, file_id=file_id)
     await asyncio.sleep(2)
     delete = threading.Thread(
         target=lambda: asyncio.run(auto_delete_thread(bot, sent_message))
