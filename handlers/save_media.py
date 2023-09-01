@@ -10,6 +10,13 @@ from pyrogram.types import (
 )
 from pyrogram.errors import FloodWait
 from handlers.helpers import str_to_b64
+from hashids import Hashids
+
+hashids = Hashids(salt="This is a very very secured string")
+
+async def encode_string(string):
+    encoded = hashids.encode(*[ord(c) for c in string])
+    return encoded
 
 
 async def forward_to_channel(bot: Client, message: Message, editable: Message):
@@ -49,7 +56,8 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
                 InlineKeyboardButton("Owner", url ="https://telegram.me/rushidhar1999")
             ]])
         )
-        share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=Rushidhar_{str_to_b64(str(SaveMessage.id))}"
+        website = f"Rushidhar_{str_to_b64(str(SaveMessage.id))}"
+        share_link = f"https://{Config.BOT_USERNAME}?start={encode_string(website)}"
         await editable.edit(
             f"**Batch Files Stored in my Database!**\n\nHere is the Permanent Link of your files: {share_link} \n\n"
             f"Just Click the link to get your files!",
@@ -85,7 +93,8 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
         await forwarded_msg.reply_text(
             f"#PRIVATE_FILE:\n\nUser Full Name : {message.from_user.first_name} {message.from_user.last_name}\nUser Name : {message.from_user.mention}\nUser ID : {message.from_user.id} Got File Link!",
             disable_web_page_preview=True)
-        share_link = f"https://telegram.me/{Config.BOT_USERNAME}?start=Rushidhar_{str_to_b64(file_er_id)}"
+        website = f"Rushidhar_{str_to_b64(file_er_id)}"
+        share_link = f"https://{Config.BOT_USERNAME}?start={encode_string(website)}"
         await editable.edit(
             "**Your File Stored in my Database!**\n\n"
             f"Here is the Permanent Link of your file: {share_link} \n\n"
