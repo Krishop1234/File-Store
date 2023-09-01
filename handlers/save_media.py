@@ -57,7 +57,7 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
             ]])
         )
         website = f"Rushidhar_{str_to_b64(str(SaveMessage.id))}"
-        share_link = f"https://{Config.BOT_USERNAME}?start={encode_string(website)}"
+        share_link = f"https://rushidhar1999-use-full-botz.onrender.com/secured?start={encode_string(website)}"
         await editable.edit(
             f"**Batch Files Stored in my Database!**\n\nHere is the Permanent Link of your files: {share_link} \n\n"
             f"Just Click the link to get your files!",
@@ -94,7 +94,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             f"#PRIVATE_FILE:\n\nUser Full Name : {message.from_user.first_name} {message.from_user.last_name}\nUser Name : {message.from_user.mention}\nUser ID : {message.from_user.id} Got File Link!",
             disable_web_page_preview=True)
         website = f"Rushidhar_{str_to_b64(file_er_id)}"
-        share_link = f"https://{Config.BOT_USERNAME}?start={encode_string(website)}"
+        share_link = f"https://rushidhar1999-use-full-botz.onrender.com/secured?start={encode_string(website)}"
         await editable.edit(
             "**Your File Stored in my Database!**\n\n"
             f"Here is the Permanent Link of your file: {share_link} \n\n"
