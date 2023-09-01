@@ -15,7 +15,7 @@ from hashids import Hashids
 
 hashids = Hashids(salt="This is a very very secured string")
 
-async def encode_string(string):
+def encode_string(string):
     encoded = hashids.encode(*[ord(c) for c in string])
     return encoded
 
